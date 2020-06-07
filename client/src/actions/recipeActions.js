@@ -24,7 +24,7 @@ export const getRecipes = () => async (dispatch) => {
     console.log(process.env.REACT_APP_SPOONACULAR_API_KEY);
 
     const res = await axios.get(
-      `https://cors-anywhere.herokuapp.com/https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_SPOONACULAR_API_KEY}&number=3`
+      `https://cors-anywhere.herokuapp.com/https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_SPOONACULAR_API_KEY}&number=10`
     );
 
     dispatch({ type: GET_RECIPES, payload: res.data });
@@ -39,7 +39,7 @@ export const getRecipes = () => async (dispatch) => {
 export const searchRecipes = (text) => async (dispatch) => {
   try {
     const res = await axios.get(
-      `https://cors-anywhere.herokuapp.com/https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_SPOONACULAR_API_KEY}&query=${text}&addRecipeInformation=true&number=2`
+      `https://cors-anywhere.herokuapp.com/https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_SPOONACULAR_API_KEY}&query=${text}&addRecipeInformation=true&number=10`
     );
 
     const recipeArray = new Object({ recipes: res.data.results });
