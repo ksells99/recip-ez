@@ -1,0 +1,89 @@
+.browse-recipe-image {
+  width: 100%;
+}
+
+.spinner-grow {
+  width: 100%;
+}
+
+.clear-button {
+  height: 100%;
+}
+
+.input-group-append {
+  height: 100%;
+}
+
+.recipe-header {
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.remove-button {
+  width: 100%;
+}
+
+.save-button {
+  width: 100%;
+}
+
+.view-button {
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  h4 {
+    text-align: center;
+  }
+
+  h5 {
+    text-align: center;
+  }
+
+  .instruction-card {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .navbar-brand {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .nav-pills {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+
+  .full-width {
+    text-align: center;
+  }
+
+  .header-icon {
+    margin-left: 0 !important;
+  }
+}
+
+.recipe-item {
+  border: 0.5px solid rgb(202, 202, 202);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.login-prompt {
+  text-align: center;
+}
+
+.diet-info {
+  width: 20px !important;
+  height: auto;
+}
+
+.showcase {
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+  display: block;
+}
