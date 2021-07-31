@@ -21,10 +21,8 @@ export const getRecipes = () => async (dispatch) => {
     // Set loading to true
     dispatch(setLoading());
 
-    console.log(process.env.REACT_APP_SPOONACULAR_API_KEY);
-
     const res = await axios.get(
-      `https://cors-anywhere.herokuapp.com/https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_SPOONACULAR_API_KEY}&number=10`
+      `https://app.cors.bridged.cc/https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_SPOONACULAR_API_KEY}&number=10`
     );
 
     dispatch({ type: GET_RECIPES, payload: res.data });
@@ -39,7 +37,7 @@ export const getRecipes = () => async (dispatch) => {
 export const searchRecipes = (text) => async (dispatch) => {
   try {
     const res = await axios.get(
-      `https://cors-anywhere.herokuapp.com/https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_SPOONACULAR_API_KEY}&query=${text}&addRecipeInformation=true&number=10`
+      `https://app.cors.bridged.cc/https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_SPOONACULAR_API_KEY}&query=${text}&addRecipeInformation=true&number=10`
     );
 
     const recipeArray = new Object({ recipes: res.data.results });
@@ -76,7 +74,7 @@ export const getSpecificRecipe = (id) => async (dispatch) => {
     dispatch(setLoading());
 
     const res = await axios.get(
-      `https://cors-anywhere.herokuapp.com/https://api.spoonacular.com/recipes/${id}/information?includeNutrition=false&apiKey=${process.env.REACT_APP_SPOONACULAR_API_KEY}`
+      `https://app.cors.bridged.cc/https://api.spoonacular.com/recipes/${id}/information?includeNutrition=false&apiKey=${process.env.REACT_APP_SPOONACULAR_API_KEY}`
     );
 
     dispatch({ type: GET_SPECIFIC_RECIPE, payload: res.data });
@@ -94,7 +92,7 @@ export const getSavedRecipeInfo = (spoonacularIds) => async (dispatch) => {
     dispatch(setLoading());
 
     const res = await axios.get(
-      `https://cors-anywhere.herokuapp.com/https://api.spoonacular.com/recipes/informationBulk?ids=${spoonacularIds}&apiKey=${process.env.REACT_APP_SPOONACULAR_API_KEY}`
+      `https://app.cors.bridged.cc/https://api.spoonacular.com/recipes/informationBulk?ids=${spoonacularIds}&apiKey=${process.env.REACT_APP_SPOONACULAR_API_KEY}`
     );
     console.log(res.data);
 
